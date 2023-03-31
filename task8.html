@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Javascript Event</title>
+    </head>
+    <body>
+        <form id="form">
+            <label for="names"> Name </label>
+            <input type="text" name="name"  id="names" value="joy">
+            <button id="btn">CLICK HERE</button>
+        </form>
+        <script>
+            const NameArr = [];
+            
+            const form = document.getElementById("form");
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+                let username = document.getElementById("names").value;
+                NameArr.push(username);
+                console.log(NameArr);
+            });
+        </script>
+    </body>
+</html>

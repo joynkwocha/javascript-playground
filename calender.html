@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse; 
+    }
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 3px;
+      text-align: center;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #E6E6E6;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="calendar">
+    <!-- <table> -->
+        <!-- <tr>
+            <th>MO</th>
+            <th>TU</th>
+            <th>WE</th>
+            <th>TH</th>
+            <th>FR</th>
+            <th>SA</th>
+            <th>SU</th>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+
+        <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+        </tr>
+
+        <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr> -->
+    <!-- </table> -->
+  </div>
+
+  <script>
+    function createCalendar(elem, year, month) {
+      let calenderContainer = elem;
+      let table = document.createElement('table');
+      let rowOne = document.createElement('tr');
+      table.append(rowOne);
+      calenderContainer.append(table);
+      for(let i = 0; i < 7; i++){
+        let th1 = document.createElement('th');
+        rowOne.append(th1);
+      }; 
+      
+      let rowOneChildren = rowOne.childNodes;
+      rowOneChildren[0].innerText = 'MO';
+      rowOneChildren[1].innerText = 'TU';
+      rowOneChildren[2].innerText = 'WE';
+      rowOneChildren[3].innerText = 'TH';
+      rowOneChildren[4].innerText = 'FR';
+      rowOneChildren[5].innerText = 'SA';
+      rowOneChildren[6].innerText = 'SU';
+
+      //getting the year
+      let date = new Date(`${year}, ${month}`);
+      if(month === 4 || month === 6 || month === 9 || month === 11) {
+          for(let i = 0; i < 5; i++) {
+            let tr2 = document.createElement('tr');
+            table.append(tr2);
+            for(let j = 0; j < 7; j++) {
+              let td1 = document.createElement('td');
+              td1.innerText = '';
+              tr2.append(td1);
+            };
+          };
+      };
+      let day = date.getDay ();
+
+      let allTd = document.getElementsByTagName('td');
+        allTd[5].innerText = 1;
+        allTd[6].innerText = 2;
+        allTd[7].innerText = 3;
+        allTd[8].innerText = 4;
+        allTd[9].innerText = 5;
+        allTd[10].innerText = 6;
+        allTd[11].innerText = 7;
+        allTd[12].innerText = 8;
+        allTd[13].innerText = 9;
+        allTd[14].innerText = 10;
+        allTd[15].innerText = 11;
+        allTd[16].innerText = 12;
+        allTd[17].innerText = 13;
+        allTd[18].innerText = 14;
+        allTd[19].innerText = 15;
+        allTd[20].innerText = 16;
+        allTd[21].innerText = 17;
+        allTd[22].innerText = 18;
+        allTd[23].innerText = 19;
+        allTd[24].innerText = 20;
+        allTd[25].innerText = 21;
+        allTd[26].innerText = 22;
+        allTd[27].innerText = 23;
+        allTd[28].innerText = 24;
+        allTd[29].innerText = 25;
+        allTd[30].innerText = 26;
+        allTd[31].innerText = 27;
+        allTd[32].innerText = 28;
+        allTd[33].innerText = 29;
+        allTd[34].innerText = 30;
+      }
+
+
+    createCalendar(calendar, 2012, 6);
+
+    let arrs = [4, 9, 3, 4, 5, 10]
+    arrs.forEach((arr) => {
+      arr++
+      console.log(arr)
+    })
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>List Item</h1>
+  
+    <script>
+      let ul = document.createElement('ul')
+        document.body.append(ul);
+
+        while (true) {
+          let item = prompt('pls enter the list item')
+          if (!item) {
+            break;
+          } else {
+            let li = document.createElement('li')
+            li.textContent = item;
+            ul.append(li);
+          }
+        };
+    </script>
+  
+</body>
+</html>

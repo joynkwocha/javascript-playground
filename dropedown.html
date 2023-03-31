@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="dropDown.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="menu">
+        <span id="close">▶Sweeties (click me)!</span>
+        <span id="open">▼Sweeties (click me)!</span>
+    </div>
+        <ul id="dropedown">
+          <li>Cake</li>
+          <li>Donut</li>
+          <li>Honey</li>
+        </ul>
+
+        <script>
+            function open(){
+            let open1 = document.getElementById("open");
+            open1.style.display = 'none';
+            let close1 = document.getElementById("close");
+            close1.style.display = 'block';
+            let dropedown1 = document.getElementById("dropedown")
+            dropedown1.style.display = 'none';
+            }
+            let opened = document.getElementById("open");
+            opened.addEventListener("click",open)
+
+            function close(){
+            let open1 = document.getElementById("open");
+            open1.style.display = 'block';
+            let close1 = document.getElementById("close");
+            close1.style.display = 'none';
+            let dropedown = document.getElementById("dropedown")
+            dropedown.style.display = 'block';
+            }
+            let closed = document.getElementById("close");
+            closed .addEventListener("click", close) 
+        </script>
+</body>
+</html>

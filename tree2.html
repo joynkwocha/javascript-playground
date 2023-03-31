@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <ul id="root">
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <script>
+    //Method 1
+
+    // function appendCount(rootUl) { 
+    //   const rootLis = rootUl.children;
+    //   let cumulativeRecursiveChildLiCount = 0;
+
+    //   for (const rootLi of rootLis) {
+    //     if (rootLi.childNodes.length === 3) {
+    //       const childUl = rootLi.childNodes[1];
+
+    //       const recursiveChildLiCount = childUl.children.length + appendCount(childUl);
+    //       cumulativeRecursiveChildLiCount += recursiveChildLiCount;
+    //       rootLi.childNodes[0].textContent += ` [${recursiveChildLiCount}]`;
+    //     }
+    //   }
+
+    //   return cumulativeRecursiveChildLiCount;
+    // }
+
+    // appendCount(document.querySelector('#root'))
+
+    // function fibonacci(n) {
+    //   const result = [0, 1];
+
+    //   while (result.length < n) {
+    //     result.push(result[result.length - 1] + result[result.length - 2]);
+    //   }
+
+    //   return result;
+    // }
+
+    // console.log(fibonacci(5));
+
+    //Method 2
+
+    let lis = document.getElementsByTagName('li');
+    
+    for (let li of lis) {
+      // get the count of all <li> below this <li>
+        let descendantsCount = li.getElementsByTagName('li').length;
+        if (!descendantsCount) continue;
+        
+        // add directly to the text node (append to the text)
+        li.firstChild.data += ` [${descendantsCount}] `;
+};
+  </script>
+</body>
+</html>

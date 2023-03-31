@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <div id="tree"></div>
+
+  <script>
+    let info = {
+      "Fish": {
+        "trout": {},
+        "salmon": {}
+      },
+
+      "Tree": {
+        "Huge": {
+          "sequoia": {},
+          "oak": {}
+        },
+        "Flowering": {
+          "apple tree": {},
+          "magnolia": {
+            "Fish": {
+              "trout": {},
+              "salmon": {}
+            },
+
+            "Tree": {
+              "Huge": {
+                "sequoia": {},
+                "oak": {}
+              },
+              "Flowering": {
+                "apple tree": {},
+                "magnolia": {}
+              }
+            }
+          }
+        }
+      }
+    };
+
+    function createTree(container, data) {
+      const rootUl = document.createElement('ul');
+      container.appendChild(rootUl);
+
+      const rootKeys = Object.keys(data)
+      rootKeys.forEach((rootKey) => {
+        const rootLi = document.createElement('li');
+        rootLi.innerText = rootKey;
+        rootUl.appendChild(rootLi);
+
+        createTree(rootLi, data[rootKey]);
+      })
+    }
+
+    createTree(document.getElementById('tree'), info);
+  </script>
+</body>
+</html>

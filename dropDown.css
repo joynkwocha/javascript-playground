@@ -1,0 +1,15 @@
+#close {
+    cursor: pointer;
+    color:rgb(41, 185, 33);
+    display: none;
+}
+
+#open {
+    cursor: pointer;
+    color:rgb(0, 156, 62);
+    display: 'block'
+}
+
+#dropedown {
+    list-style-type : none;
+}

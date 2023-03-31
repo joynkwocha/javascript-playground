@@ -1,0 +1,59 @@
+.arrow {
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+    margin:auto;
+    position:relative;
+    top: 80px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: normal;
+  }
+  
+  .arrow:focus {
+    outline: none;
+  }
+  
+  .arrow:hover {
+    background: #ccc;
+    cursor: pointer;
+  }
+  
+  ul {
+    height: 130px;
+    width: 9999px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    display: flex;
+    transition: margin-left 250ms;
+  }
+
+
+  
+  ul img {
+    width: 130px;
+    height: 130px;
+    display: block;
+    position:relative;
+    top:15px;
+  }
+  
+  .back{
+    background: #b4b4b4;
+    width:360px;
+    height: 150px;
+    border-radius:15px;
+    overflow:hidden;
+    margin:auto;
+  }
+ 
+

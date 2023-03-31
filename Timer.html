@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class='timer'>
+        hh:mm:ss
+    </div>
+
+  <input type="button" value="Start" class='start'>
+
+  <input type="button"  value="Stop" class='stop'>
+
+  <script>
+      let container = document.querySelector('.timer');
+      
+       function start() {
+        let date = new Date();
+        let hour = date.getHours();
+        if(hour < 10) {
+            hour = '0' + hour;
+        }
+        let min = date.getMinutes();
+        if(min < 10) {
+            min = '0' + min;
+        }
+        let sec = date.getSeconds();
+        if(sec < 10) {
+            sec = '0' + sec;
+        }
+        container.innerText = `${hour}:${min}:${sec}`
+    };
+
+    let myInterval;
+    
+    let begin = document.querySelector('.start');
+    begin.addEventListener("click", () => {
+         myInterval = setInterval(start, 1000 )
+    });
+    
+    let end = document.querySelector('.stop');
+    end.addEventListener("click", () => {
+        clearInterval (myInterval)
+    });
+  </script>
+</body>
+</html>
