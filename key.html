@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Keyboard Event</title>
+        <style>
+            body {
+                background-color:#121212;
+            }
+            .container {
+                display: flex;
+                justify-content: center;        
+            }
+
+            .left {
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-left: 40px solid white;
+            transform: rotate(180deg);
+            position: relative;
+            top: 50px;
+            left: 50px;
+            margin: 0px;
+            }
+
+            .bottom {
+            width: 0;
+            height: 0;
+            border-top: 40px solid white;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-left: 40px solid transparent;
+            position: relative;
+            top: 95px;
+            left: 80px;
+            margin: 0px;
+            }
+
+            .top {
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid white;
+            border-right: 40px solid transparent;
+            border-left: 40px solid transparent;
+            margin: 0px;
+            }
+
+            .right {
+            width: 0;
+            height: 0;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
+            border-right: 40px solid white;
+            border-left: 40px solid transparent;
+            transform: rotate(180deg);
+            position: relative;
+            top: 50px;
+            left: 30px;
+            margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left"></div>
+            <div class="bottom"></div>
+            <div class="top"></div>
+            <div class="right"></div>
+        </div>
+        <script>
+
+    function keyPressed() {
+        document.addEventListener("keydown", (event) => {
+            alert('The key pressed is' + ' ' + event.key)
+        });
+    }
+        // keyPressed()
+
+        let topArrow = document.querySelector('.top');
+        let downArrow = document.querySelector('.bottom');
+        let rightArrow = document.querySelector('.right');
+        let leftArrow = document.querySelector('.left');
+        let pressed = document.addEventListener("keydown", (event) => {
+            let code = event.code
+            if(code === "ArrowUp") {
+                topArrow.style.boxShadow = '0 0 20px #00ff00'
+                topArrow.style.transition = 'box-shadow 0.2s ease-in-out';
+            };
+
+            if(code === "ArrowDown") {
+                downArrow.style.boxShadow = '0 0 20px #00ff00';
+                downArrow.style.transition = 'box-shadow 0.2s ease-in-out';
+            };
+            
+            if(code === "ArrowLeft") {
+                leftArrow.style.boxShadow = ' 0 0 20px #00ff00';
+                leftArrow.style.transition = 'box-shadow 0.2s ease-in-out';
+            };
+
+            if(code === "ArrowRight") {
+                rightArrow.style.boxShadow = '0 0 20px #00ff00';
+                rightArrow.style.transition = 'box-shadow 0.2s ease-in-out';
+            };
+        });
+
+        let released = document.addEventListener("keyup", (event) => {
+            topArrow.style.boxShadow = '0 0 0px #00ff00'
+            downArrow.style.boxShadow = '0 0 0px #00ff00'
+            rightArrow.style.boxShadow = '0 0 0px #00ff00'
+            leftArrow.style.boxShadow = '0 0 0px #00ff00'
+        });
+        </script>
+    </body>
+</html>
+  
