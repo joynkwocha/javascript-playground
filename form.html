@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms</title>
+        <link rel="stylesheet" type="text/css" href="form.css">
+        <script src="https://kit.fontawesome.com/20f82fd8a1.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="first-half">
+         <div id="form_container" class= "form_parent"> 
+             <form id='main_form' class= "main">
+                <h2 class="header">Join Our Community</h2>
+                <div id="form_group" class="input_container">
+                    <input type='text' name="first-name" id='name' class="input" placeholder='First Name' required autofocus>
+                </div>
+
+                <div id="form_group" class="input_container">
+                    <input type='text' name="last-name"  id='last_name' class="input" placeholder='Last Name' required>
+                </div>
+
+                <div id="form_group"  class="input_container">
+                    <input type='email' name="email"  id='email' class="input" placeholder='Email' required>
+                </div>
+
+                <div id="form_group"  class="input_container password_field">
+                    <input type='password' name="password"  id='password' class="input" placeholder='Password' minlength="8" required>
+                    <i class="fa-regular fa-eye-slash"></i>
+                </div>
+
+                <div id="form_group" class="input_container" >
+                    <input type='password' name="confirm"  id='confirm_password' class="input" placeholder='Confirm Password' required>
+                </div>
+
+
+                <div id="form_group"  class="input_container">
+                    <button id= "signup_btn" class="sign_up">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+        <div class="server" id="second-half">
+            <table>
+                <tr class= 'firstrow'>
+                    <td class="nw" tabindex = 1><strong>User Joy</strong>
+                      <br>First Name :
+                      <br>Last Name :
+                      <br>Email :
+                      <br>Password :
+                    </td>
+                <tr>
+
+                    <tr class= 'firstrow'>
+                        <td class="nw" tabindex = 1><strong>User Joy</strong>
+                          <br>First Name :
+                          <br>Last Name :
+                          <br>Email :
+                          <br>Password :
+                        </td>
+                    <tr>
+
+                        <tr class= 'firstrow'>
+                            <td class="nw" tabindex = 1><strong>User Joy</strong>
+                              <br>First Name :
+                              <br>Last Name :
+                              <br>Email :
+                              <br>Password :
+                            </td>
+                        <tr>
+            </table>
+        </div>
+
+        <script src="form.js"></script>
+        
+    </body>
+</html>
