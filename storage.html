@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> My JavaScript Practice</title>
+</head>
+
+<body>
+    <textarea placeholder = "write something" id= "note"></textarea>
+    <button id="btn">Clear</button>
+    <script>
+            window.addEventListener("DOMContentLoaded", () => {
+                const storedValue = localStorage.getItem("note");
+                if (storedValue) {
+                    textArea.value = storedValue;
+                } 
+            });
+
+            const textArea = document.querySelector("#note");
+            textArea.addEventListener("input", (e) => {
+            let value = textArea.value;
+            localStorage.setItem(" note",value);
+        });
+
+        const button = document.querySelector("#btn");
+        button.addEventListener("click", () => {
+            localStorage.clear();
+            textArea.value = "";
+        })
+    </script>
+</body>
+</html>

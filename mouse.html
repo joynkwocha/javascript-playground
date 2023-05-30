@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+        position : relative;
+        overflow: hidden;
+    }
+    #mouse {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0; 
+      position: absolute;   
+    }
+
+    #mouse:focus {
+      outline: 1px dashed rgb(255, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <p>Click on the mouse and move it with arrow keys.</p>
+    <pre id="mouse" tabindex = 1>
+   _   _
+  (q\_/p)
+   /. .\
+  =\_t_/=   __
+   /   \   (
+  ((   ))   )
+  /\) (/\  /
+  \  Y  /-'
+   nn^nn
+  </pre>
+  <script>
+      let mouse = document.querySelector('#mouse');
+      let x = 0;
+      let y = 0;
+      const keydownListener = (event) => {
+            if(event.code === "ArrowRight") {
+                x +=10;
+                mouse.style.left = x + 'px';
+            };
+
+            if(event.code === "ArrowLeft") {
+                x -=10;
+                mouse.style.left = x + "px";
+            };
+            if(event.code === "ArrowUp") {
+                y -= 10;
+                mouse.style.top = y + "px";
+            };
+            if(event.code === "ArrowDown") {
+                y += 10;
+                mouse.style.top = y + "px";
+            };
+      };
+
+    mouse.addEventListener("focus", () => {
+        mouse.addEventListener("keydown",keydownListener)
+    });
+
+    mouse.addEventListener("blur", () => {
+        mouse.style.outLine = 'none';
+        document.removeEventListener("keydown", keydownListener);
+    });
+  </script>
+</body>
+</html>

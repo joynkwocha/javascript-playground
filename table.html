@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <link rel="stylesheet" href="table.css">
+
+  <p>Click on a table cell to edit it. Press OK or CANCEL when you finish.</p>
+
+  <table id="bagua-table">
+    <!-- <tr>
+      <th colspan="3"><em>Bagua</em> Chart: Direction, Element, Color, Meaning</th>
+    </tr> -->
+    <tr class= 'firstrow'>
+      <td class="nw" tabindex = 1><strong>Northwest</strong>
+        <br>Metal
+        <br>Silver
+        <br>Elders
+      </td>
+      <td class="n" tabindex = 1><strong>North</strong>
+        <br>Water
+        <br>Blue
+        <br>Change
+      </td>
+      <td class="ne" tabindex = 1><strong>Northeast</strong>
+        <br>Earth
+        <br>Yellow
+        <br>Direction
+      </td>
+    </tr>
+    <tr class='second-row'>
+      <td class="w" tabindex = 1><strong>West</strong>
+        <br>Metal
+        <br>Gold
+        <br>Youth
+      </td>
+      <td class="c" tabindex = 1><strong>Center</strong>
+        <br>All
+        <br>Purple
+        <br>Harmony
+      </td>
+      <td class="e" tabindex = 1><strong>East</strong>
+        <br>Wood
+        <br>Blue
+        <br>Future
+      </td>
+    </tr>
+    <tr class = 'third-row'>
+      <td class="sw" tabindex = 1><strong>Southwest</strong>
+        <br>Earth
+        <br>Brown
+        <br>Tranquility
+      </td>
+      <td class="s" tabindex = 1><strong>South</strong>
+        <br>Fire
+        <br>Orange
+        <br>Fame
+      </td>
+      <td class="se" tabindex = 1><strong>Southeast</strong>
+        <br>Wood
+        <br>Green   
+        <br>Romance
+      </td>
+    </tr>
+  </table>
+
+  <input value = "text" class="result">
+  <script>
+    let editableTd;
+    let table = document.querySelector("#bagua-table");
+    table.addEventListener("click", (event) => {
+      let td = event.target.closest('td');
+      if(event.target !== td) return;
+      let initialValue = td.innerHTML;
+
+      let textarea = td.querySelector("textarea");
+      if (textarea) return;
+
+      if(editableTd && editableTd !== td) {
+        
+      }
+
+      let textArea = document.createElement('textarea');
+          textArea.value = initialValue;
+          textArea.style.width = td.clientWidth + 'px';
+          textArea.style.height = td.clientHeight + 'px';
+          td.style.background = 'none';
+          td.innerHTML = '';
+          td.style.padding = 0 + 'px';
+          
+          td.appendChild(textArea);
+          textArea.focus();
+
+          let btnContainer = document.createElement('div');
+          let ok = document.createElement("button");
+          ok.innerText = 'OK';
+          btnContainer.append(ok);
+          let cancel = document.createElement('button');
+          cancel.innerText = 'CANCEL';
+          btnContainer.append(cancel);
+
+          td.appendChild(btnContainer);
+          
+
+          ok.addEventListener('click', () => {
+            td.innerHTML = textArea.value;
+            td.style.background = '';
+          });
+
+          cancel.addEventListener ("click", () => {
+            td.innerHTML = initialValue;
+            td.style.background = '';
+          });
+    })
+  </script>
+</body>
+</html>-

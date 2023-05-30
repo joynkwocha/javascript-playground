@@ -9,7 +9,7 @@
         <div class="first-half">
          <div id="form_container" class= "form_parent"> 
              <form id='main_form' class= "main">
-                <h2 class="header">Join Our Community</h2>
+                <h2 class="header">Add User</h2>
                 <div id="form_group" class="input_container">
                     <input type='text' name="first-name" id='name' class="input" placeholder='First Name' required autofocus>
                 </div>
@@ -23,53 +23,35 @@
                 </div>
 
                 <div id="form_group"  class="input_container password_field">
-                    <input type='password' name="password"  id='password' class="input" placeholder='Password' minlength="8" required>
-                    <i class="fa-regular fa-eye-slash"></i>
+                    <input type='tel' name="phone"  id='password' class="input" placeholder='phone' minlength="11" required>
                 </div>
-
-                <div id="form_group" class="input_container" >
-                    <input type='password' name="confirm"  id='confirm_password' class="input" placeholder='Confirm Password' required>
-                </div>
-
 
                 <div id="form_group"  class="input_container">
-                    <button id= "signup_btn" class="sign_up">Sign Up</button>
+                    <button id= "signup_btn" class="sign_up">Add</button>
                 </div>
             </form>
+            <button  id= "fetch_btn" class="fetch">Fetch data</button>
         </div>
     </div>  
         <div class="server" id="second-half">
-            <table>
-                <tr class= 'firstrow'>
-                    <td class="nw" tabindex = 1><strong>User Joy</strong>
-                      <br>First Name :
-                      <br>Last Name :
-                      <br>Email :
-                      <br>Password :
-                    </td>
-                <tr>
-
-                    <tr class= 'firstrow'>
-                        <td class="nw" tabindex = 1><strong>User Joy</strong>
-                          <br>First Name :
-                          <br>Last Name :
-                          <br>Email :
-                          <br>Password :
-                        </td>
-                    <tr>
-
-                        <tr class= 'firstrow'>
-                            <td class="nw" tabindex = 1><strong>User Joy</strong>
-                              <br>First Name :
-                              <br>Last Name :
-                              <br>Email :
-                              <br>Password :
-                            </td>
-                        <tr>
+            <table id="display">
+             <thead>
+                <td><strong>First Name</strong></td>
+                <td><strong>Last Name</strong></td>
+                <td><strong>Email</strong></td>
+                <td><strong>Phone</strong></td>
+             </thead>
+             <tbody id="table-body">
+             </tbody>
             </table>
-        </div>
+             
+            <p id="error-message"></p>
 
+    <form id="fetchForm">
+        <label for="desiredName">Enter First Name:</label>
+        <input type="text" id="desiredName" name="desiredName">
+    </form>
+        </div>
         <script src="form.js"></script>
-        
     </body>
 </html>

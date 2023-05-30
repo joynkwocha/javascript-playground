@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    td select,
+    td input {
+      width: 150px;
+    }
+
+    #diagram td {
+      vertical-align: bottom;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #diagram div {
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  Deposit calculator.
+
+  <form name="calculator">
+    <table>
+      <tr>
+        <td>Initial deposit</td>
+        <td>
+          <input name="money" type="number" value="" required id="initial"> 
+        </td>
+      </tr>
+      <tr>
+        <td>How many months?</td>
+        <td>
+          <select name="months" id="years">
+            <option value="3">3 (minimum)</option>
+            <option value="6">6 (half-year)</option>
+            <option value="12" selected>12 (one year)</option>
+            <option value="18">18 (1.5 years)</option>
+            <option value="24">24 (2 years)</option>
+            <option value="30">30 (2.5 years)</option>
+            <option value="36">36 (3 years)</option>
+            <option value="60">60 (5   years)</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Interest per year?</td>
+        <td>
+          <input name="interest" type="number" value="5" required id="interest">
+        </td>
+      </tr>
+    </table>
+
+  </form>
+  <table id="diagram">
+    <tr>
+      <th>Was:</th>
+      <th>Becomes:</th>
+    </tr>
+    <tr>
+      <th id="money-before"></th>
+      <th id="money-after"></th>
+    </tr>
+    <td>
+      <div style="background: red;width:40px;height:100px"></div>
+    </td>
+    <td>
+      <div style="background: green;width:40px;height:0" id="height-after"></div>
+    </td>
+  </table>
+  <script>
+
+    let form = document.forms.calculator;
+    
+    form.addEventListener('input', () => {
+        let initialDepo = document.querySelector('#initial');
+        let moneyBefore = document.querySelector("#money-before");
+        let interest = document.querySelector('#interest');
+        let years = document.querySelector("#years");
+        let moneyAfter = document.querySelector('#money-after');
+        moneyBefore.innerText = initialDepo.value;
+        moneyAfter.innerText = Math.round(initialDepo.value * (1 + interest.value/100) ** parseInt(years.value/12));
+
+      let height = moneyAfter.innerText / initialDepo.value * 100 + 'px';
+      document.getElementById('height-after').style.height = height;
+    });
+
+  </script>
+</body>
+</html>

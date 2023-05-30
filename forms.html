@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> JaavaScript Form Control</title>
+    </head>
+    <body>
+        <select id="genres">
+            <option value="rock">Rock</option>
+            <option value="blues" selected>Blues</option>
+          </select>
+        <script>
+           let selected = document.querySelector('#genres');
+           let child = selected.children[1];
+           alert(child.value);
+           alert(child.innerText);
+
+            let option = document.createElement('option')
+            option.innerText = 'Classic';
+            option.setAttribute('value', 'classic');
+            option.setAttribute('selected', "")
+            selected.append(option);
+        </script>
+    </body>
+</html>

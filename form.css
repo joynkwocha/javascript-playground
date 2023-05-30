@@ -83,12 +83,56 @@ body {
   }
  
   .first-half {
-    flex-grow:2; 
+    flex-grow:1; 
   }
  
 
   .server {
-    flex-grow:1; 
+    flex-grow:3; 
+  }
+
+  table {
+    position: absolute;
+    top: 5%;
+    left: 52%;
+  }
+
+  td {
+    padding : 20px;
+    background-color: #f2f2f2;
+    text-align: center;
   }
   
+  .edit {
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .newinput {
+    padding: 20px;
+    resize: none;
+    display: block;
+
+  }
+
+  .fetch {
+      border-radius: 20px;
+      height: 30px;
+      background-color: rgb(1, 1, 11);
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(375%, 150%);
+  }
+
+  #fetchForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+
   
