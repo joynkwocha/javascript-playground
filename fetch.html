@@ -1,12 +1,35 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
-        <title> FETCH</title>
+        <title> Async Javascript</title>
     </head>
-    <body>
+    <body id="parent">
+        <div id="container">
+            
+        </div>
         <script>
+    const fetcimage = async () => {
+           let parent = document.getElementById('container');
 
+           while(true) {
+            let response = await fetch('https://picsum.photos/v2/list');
+        if (response.status === 200) {
+            console.log(response , 'successful');
+        } else {
+            confirm('An error occured, pls retry');
+        }
+        let data = await response.json();
+        data.forEach((Data) => {
+            let image = document.createElement('img');
+            image.style.width = 200 + "px";
+            image.style.height = 200 + "px";
+            image.src = Data.download_url;
+            parent.appendChild(image)
+        });
+           }
+       }
+       fetcimage()
         </script>
     </body>
 </html>
-  
+   -->

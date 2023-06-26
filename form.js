@@ -35,6 +35,26 @@ const tableBody = document.querySelector("#table-body");
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const formData = new FormData(form);
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        body: formData,
+       
+    }).then((response) => {
+        if ( response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Form submission failed');
+        }
+    }).then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    })
+
+    
     if (form.checkValidity()) {
         let firstsName = firstNameInput.value;
         let lastName = lastNameInput.value;
