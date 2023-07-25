@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oop</title>
+    </head>
+    <body>
+        <script>
+//             //Classe
+//             class User {
+//                  counstructor (name, email, password) {
+//                     this.name = name;
+//                     this.email = email;
+//                     this.password = password;
+//                  }
+//             }
+
+//             let userOne = new User('joy', 'myEmail.com', 'mypasscode' )
+
+//                             let empty = {};
+//                 console.log(empty.toString);
+//                 // → function toString(){…}
+//                 console.log(empty.toString());
+//                 // → [object Object]
+
+//                 // Create a Data Cache
+
+//                 let okIterator = "OK"[Symbol.iterator]();
+// console.log(okIterator.next());
+// // → {value: "O", done: false}
+// console.log(okIterator.next());
+// // → {value: "K", done: false}
+// console.log(okIterator.next());
+// // → {value: undefined, done: true}
+
+
+
+class Vec {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  plus(vector) {
+    return new Vec(this.x + vector.x, this.y + vector.y)
+  };
+    
+  minus(vector) {
+    return new Vec(this.x - vector.x, this.y - vector.y)
+  };
+
+  get length() {
+   return  Math.sqrt(this.x**2 + this.y**2)
+  };
+
+};
+
+console.log(new Vec(3, 2).minus(new Vec(5, 3)));
+
+// let ages = new Map();
+// ages.set("Boris", 39);
+// ages.set("Liang", 22);
+// ages.set("Júlia", 62);
+
+// console.log(`Júlia is ${ages.get("Júlia")}`);
+// // → Júlia is 62
+// console.log("Is Jack's age known?", ages.has("Jack"));
+// // → Is Jack's age known? false
+// console.log(ages.has("toString"));
+// // → false
+class Group {
+  constructor () {
+    this. collective = [];
+  }
+
+  add(value) {
+    if(this.collective.includes(value) === false) {
+      this.collective.push(value);
+    }
+  }
+
+  delete(value) {
+    const index = this.collective.indexOf(value);
+    if (index !== -1) {
+      this.collective.splice(index, 1);
+    }
+  }
+
+  has(value) {
+    if(this.collective.includes(value)) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+
+  static from(arrs) {
+    const newgroup = new Group();
+   for(let i = 0; i < arrs.length; i++) {
+     newgroup.add(arrs[i])
+   }
+    return newgroup;
+  }
+
+  [Symbol.iterator]() {
+    let index = 0;
+    let data = this.collective;
+     return {
+      next() {
+        if(index >= data.length ) {
+          return {
+            value: undefined,
+            done: true
+          }
+        } else{
+          return {
+            value:data[index++],
+            done : false
+          }
+        }
+      }
+     }
+}
+};
+
+let iterableGroup =  Group.from(['a', 'b']);
+for(let iterate of iterableGroup) {
+  console.log(iterate)
+}
+        </script>
+    </body>
+</html>
